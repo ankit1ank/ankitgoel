@@ -1,10 +1,13 @@
 import PackageDescription
 
 let package = Package(
-    name: "AnkitGoel",
+    name: "ankitgoel",
+    targets: [
+        Target(name: "App"),
+        Target(name: "Run", dependencies: ["App"]),
+    ],
     dependencies: [
-        .Package(url: "https://github.com/vapor/vapor.git", majorVersion: 1, minor: 1),
-        .Package(url: "https://github.com/himani93/logger-provider.git", majorVersion: 0)
+        .Package(url: "https://github.com/vapor/vapor.git", majorVersion: 2)
     ],
     exclude: [
         "Config",
@@ -12,7 +15,6 @@ let package = Package(
         "Localization",
         "Public",
         "Resources",
-        "Tests",
     ]
 )
 
