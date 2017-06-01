@@ -1,4 +1,5 @@
 import FluentProvider
+import Heimdall
 
 extension Config {
     public func setup() throws {
@@ -12,7 +13,7 @@ extension Config {
     
     /// Configure providers
     private func setupProviders() throws {
-        // No providers
+        try addProvider(Heimdall.Provider(format: .tiny, path: "~/logs/"))
     }
     
     /// Add all models that should have their
