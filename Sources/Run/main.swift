@@ -22,6 +22,8 @@ try config.setup()
 let drop = try Droplet(config)
 try drop.setup()
 
+drop.view.shouldCache = false
+
 // Not recommended refactor later - move to routes
 drop.get { req in
     return try drop.view.make("index.html")
