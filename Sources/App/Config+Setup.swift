@@ -13,7 +13,7 @@ extension Config {
     
     /// Configure providers
     private func setupProviders() throws {
-        try addProvider(Heimdall.Provider(format: .tiny, path: "~/logs/"))
+        try addProvider(Heimdall.Provider(format: .complete, path: "~/logs/"))
     }
     
     /// Add all models that should have their
