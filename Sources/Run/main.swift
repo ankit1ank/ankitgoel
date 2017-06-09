@@ -49,4 +49,12 @@ drop.get("YesToYogaSupport.html") {
     return try drop.view.make("YesToYogaSupport.html")
 }
 
+drop.get("ip") { request in
+    if let address = request.peerHostname {
+        return address
+    } else {
+        return "No address"
+    }
+}
+
 try drop.run()
